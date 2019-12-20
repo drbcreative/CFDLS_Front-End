@@ -14,6 +14,16 @@
       height: auto;
     }
   }
+
+  a {
+    color: $color-white;
+    text-align: right;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+  }
 }
 
 
