@@ -1,0 +1,52 @@
+body {
+  position: relative;
+  height: 100vh;
+
+  .search-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(142, 151, 157, 0.9);
+    z-index: 9999999;
+    opacity: 0;
+    display: none;
+    animation: searchOut .3s ease-out forwards;
+
+
+    i.close {
+      font-size: 1.5rem;
+      position: absolute;
+      top: 10%;
+      right: 50px;
+
+      @include isXLarge {
+        top: 30%;
+      }
+    }
+
+    &.active {
+      animation: searchIn .3s ease-out forwards;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.containerish {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.containerish-fluid {
+  width: 100%;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1300px;
+}

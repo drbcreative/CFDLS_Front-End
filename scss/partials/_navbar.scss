@@ -1,0 +1,183 @@
+/* ************************************************************************** */
+/* Navbar ******************************************************************* */
+/* ************************************************************************** */
+.main-nav-wrapper {
+  background: $color-dark;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  width: 100%;
+
+  @include isXLarge {
+    // justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+
+  .toggle {
+    display: inline-flex;
+    width: 100%;
+    background: $color-dark;
+    font-size: 30px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 1rem;
+
+    @include isXLarge {
+      display: none;
+    }
+
+    .logo {
+      max-width: 300px;
+      height: auto;
+    }
+
+    #nav-toggle {
+      color: $color-white;
+      cursor: pointer;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  /* nav menu */
+  .nav-menu {
+    // background-color: #fff;
+    display: none;
+    padding: 0;
+    margin: 0;
+    transition: all .3s ease-in-out;
+
+    @include isXLarge {
+      // background-color: slategrey;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 100%;
+      max-width: 1200px;
+      height: auto;
+    }
+
+    &.show {
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      transition: all .3s ease-in-out;
+    }
+
+    .db-nav-link {
+      list-style: none;
+      padding: 10px 0;
+      width: 100%;
+      text-align: center;
+      cursor: pointer;
+
+      &.menu-drop {
+        position: relative;
+        height: auto;
+
+        .menu-sub {
+          display: none;
+          position: relative;
+          background: $color-dark;
+          left: 0;
+          height: auto;
+          margin: 0;
+          padding: 0;
+          min-width: 200px;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          z-index: 20;
+
+
+
+          @include isXLarge {
+            position: absolute;
+            top: 53px;
+            align-items: flex-start;
+            min-width: 200px;
+            width: 900px;
+            max-width: max-content;
+          }
+
+          &.sub-2 {
+            @include isXLarge {
+              left: 100%;
+              top: 0;
+              min-width: 200px;
+              width: 900px;
+              max-width: max-content;
+            }
+          }
+
+          &.sub-2-left {
+            @include isXLarge {
+              left: -258px;
+              right: 100%;
+              // right: 100%;
+              top: 0;
+              min-width: 200px;
+              width: 900px;
+              max-width: max-content;
+            }
+          }
+
+          .db-nav-link {
+            width: 100%;
+            padding: 10px 20px;
+            justify-self: flex-start;
+            text-align: center;
+
+            @include isXLarge {
+              text-align: left;
+            }
+          }
+        }
+
+        &.menu-drop:hover>.menu-sub {
+          display: flex;
+        }
+      }
+
+      @include isXLarge {
+        list-style: none;
+        padding: 15px 20px;
+        width: auto;
+        text-align: center;
+
+        &.menu-drop:hover>.menu-sub {
+          display: flex;
+        }
+      }
+
+      a {
+        font-family: $font-primary;
+        font-size: 14px;
+        color: $color-white;
+        text-decoration: none;
+        letter-spacing: 0;
+        transition: all .2s ease-in-out;
+      }
+
+      &:hover {
+        background-color: lighten($color-dark, 10);
+        transition: all .2s ease-in-out;
+      }
+    }
+
+    .hide-mobile {
+      display: none;
+
+      @include isXLarge {
+        padding: 20px 2rem;
+        display: initial;
+      }
+    }
+  }
+}

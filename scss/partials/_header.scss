@@ -1,0 +1,29 @@
+/* ************************************************************************** */
+/* Header Sections ********************************************************** */
+/* ************************************************************************** */
+header {
+  position: relative;
+  // width: 100%;
+  // background: green;
+  // z-index: 9999;
+
+  // @include isLarge {
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   z-index: 999;
+  // }
+
+  .brand {
+    background: #8e979d;
+    padding: 2rem 0;
+
+    @include isXLarge {
+      height: 150px;
+    }
+  }
+}
+
+@import 'topbar';
+@import 'navbar';
